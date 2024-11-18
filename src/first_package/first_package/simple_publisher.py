@@ -7,12 +7,12 @@ from std_msgs.msg import String  # Import the String message type
 # Replace 'Node_ID' with a unique name for your group’s node (e.g., 'node_1' if you’re Group 1)
 class MinimalPublisher(Node):
     def __init__(self):
-        # Initialize the node with the custom name 'node_NICKNAME'
-        super().__init__('node_NICKNAME')  # <-- Replace 'NICKNAME' with your actual group number
+        # Initialize the node with the custom name 'node_ID10'
+        super().__init__('node_ID10')  # <-- Replace '10' with your actual group number
         
         # Step 2: Create a publisher for your topic
         # Replace 'topic_ID' with a unique topic name (e.g., 'topic_1' for Group 1)
-        self.publisher_ = self.create_publisher(String, 'topic_NICKNAME', 10)  # <-- Replace 'NICKNAME'
+        self.publisher_ = self.create_publisher(String, 'topic_ID10', 10)  # <-- Replace '10'
         
         # Step 3: Set a timer to publish messages at a chosen frequency
         # Modify 'timer_period' to control how often messages are published (e.g., 2.0 for every 2 seconds)
@@ -29,7 +29,7 @@ class MinimalPublisher(Node):
         
         # Customize the message data with a unique message
         # Modify the message content to include your group number and a custom message
-        msg.data = f"Group NICKNAME says hello! This is message #{self.i}"  # <-- Replace 'NICKNAME'
+        msg.data = f"Group ID10 says hello! This is message #{self.i}"  # <-- Replace '10'
         
         # Publish the message
         self.publisher_.publish(msg)
