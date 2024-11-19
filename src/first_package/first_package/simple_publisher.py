@@ -2,8 +2,8 @@
 import rclpy
 from rclpy.node import Node
 from std_msgs.msg import String  # Import the String message type
-from geometry_msgs.msg import Accel, Vector3
 from random import random
+from first_interfaces.msg import ExampleMessage
 import math
 
 # Step 1: Define a class for the publisher node
@@ -15,7 +15,7 @@ class MinimalPublisher(Node):
         
         # Step 2: Create a publisher for your topic
         # Replace 'topic_ID' with a unique topic name (e.g., 'topic_1' for Group 1)
-        self.publisher_ = self.create_publisher(Accel, 'topic_publisher', 10)  # <-- Replace '10'
+        self.publisher_ = self.create_publisher(ExampleMessage, 'topic_publisher', 10)  # <-- Replace '10'
         
         # Step 3: Set a timer to publish messages at a chosen frequency
         # Modify 'timer_period' to control how often messages are published (e.g., 2.0 for every 2 seconds)
@@ -28,13 +28,11 @@ class MinimalPublisher(Node):
     # Step 5: Define the callback function that will be called by the timer
     def timer_callback(self):
         # Create a new String message
-        msg = Accel()
+        msg = ExampleMessage()
         
-        msg.linear = Vector3()
-        msg.linear.x = random()*10
-        msg.linear.y = random()*10
-        msg.linear.z = random()*10
-
+        msg.my_float = 34.9
+        msg.my_float_array = [1.0, 2.0, 3.0]
+        msg.my_string = "Hola como estas"
         
         # Publish the message
         self.publisher_.publish(msg)
