@@ -11,14 +11,14 @@ from std_msgs.msg import String  # Import the String message type
 class MinimalSubscriber(Node):
     def __init__(self):
         # Initialize the node with the custom name 'node_ID10'
-        super().__init__('node_ID10')  # <-- Replace 'ID10' with your actual group number
+        super().__init__('node_subscriber')  # <-- Replace 'ID10' with your actual group number
         
         # Step 2: Create a subscription to your group's topic
         # Replace 'topic_ID' with the topic name you want to subscribe to (e.g., 'topic_1' for Group 1)
         # The callback function 'listener_callback' will be called whenever a message is received
         self.subscription = self.create_subscription(
             String,             # Message type used by the publisher
-            'topic_ID10',  # <-- Replace 'ID10' with the specific topic name for your group
+            'topic_combo',  # <-- Resubsace 'ID10' with the specific topic name for your group
             self.listener_callback,  
             10)  # Queue size for incoming messages
         self.subscription  # Prevent unused variable warning
