@@ -11,12 +11,7 @@ class MinimalSubPub(Node):
         
         
         self.publisher_ = self.create_publisher(String, 'topic_combo', 10)  # <-- Replace '10'
-        
-        # Step 3: Set a timer to publish messages at a chosen frequency
-        # Modify 'timer_period' to control how often messages are published (e.g., 2.0 for every 2 seconds)
-        # timer_period = 2.0  # <-- You can change this to another value like 1.5 or 3.0
-        # self.timer = self.create_timer(timer_period, self.timer_callback)
-        
+                
         # Step 4: Initialize a counter to keep track of message numbers
         self.i = 0  # Starts counting from 0
 
