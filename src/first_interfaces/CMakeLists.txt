@@ -23,9 +23,12 @@ find_package(rosidl_default_generators REQUIRED)
 # Declare the list of messages you want to generate:
 set(msg_files "msg/ExampleMessage.msg")
 
+# Decalre the list of services
+set(srv_files "srv/AddTwoInts.srv")
+
 # Generate the messages:​
 
-rosidl_generate_interfaces(${PROJECT_NAME} ${msg_files})
+rosidl_generate_interfaces(${PROJECT_NAME} ${msg_files} ${srv_files})
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
