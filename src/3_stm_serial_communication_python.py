@@ -176,4 +176,3 @@ if __name__ == "__main__":
     app = App(root, serial_interface)
     root.mainloop()
     serial_interface.stop()
-

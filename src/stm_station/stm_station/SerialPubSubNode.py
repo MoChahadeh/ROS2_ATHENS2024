@@ -23,11 +23,11 @@ class SerialPubSubNode(Node):
 
         # Create a publisher for Float32MultiArray messages
         # TODO: Create a publisher for 'serial_data' topic
-        self.data_publisher = self.create_publisher(Float32MultiArray, "serial_data", 10)
+        self.data_publisher = self.create_publisher(Float32MultiArray, "stm_state", 10)
 
         # Create a subscriber for control commands
         # TODO: Create a subscriber for 'control_commands' topic with 'control_callback' as the callback
-        self.control_subscriber = self.create_subscription(Float32MultiArray, "control_commands", self.control_callback, 10)
+        self.control_subscriber = self.create_subscription(Float32MultiArray, "stm_control", self.control_callback, 10)
 
         # Create a timer to read data periodically
         self.timer = self.create_timer(1 / self.loop_frequency, self.timer_callback)

@@ -1,9 +1,6 @@
 from setuptools import find_packages, setup
 
-import os
-from glob import glob
-
-package_name = 'stm_station'
+package_name = 'cross_control_test'
 
 setup(
     name=package_name,
@@ -13,7 +10,6 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
-        (os.path.join('share', package_name, 'launch'), glob("launch/*.py"))
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -24,8 +20,6 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            "stm_serial_node_pub = stm_station.SerialPublisherNode:main",
-            "stm_serial_node_pubsub = stm_station.SerialPubSubNode:main",
-            "stm_serial_command_pub = stm_station.CommandPublisher:main" 
-            ]
-    })
+        ],
+    },
+)

@@ -9,7 +9,7 @@ class CommandPublisher(Node):
         super().__init__("stm_command_publisher")
         
         
-        self.command_publisher = self.create_publisher(Float32MultiArray, "control_commands", 10)
+        self.command_publisher = self.create_publisher(Float32MultiArray, "stm_control", 10)
         
         self.timer = self.create_timer(5, self.timer_callback)
 

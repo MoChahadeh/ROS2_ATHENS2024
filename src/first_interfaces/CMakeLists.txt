@@ -21,10 +21,10 @@ find_package(std_msgs REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
 
 # Declare the list of messages you want to generate:
-set(msg_files "msg/ExampleMessage.msg")
+set(msg_files "msg/ExampleMessage.msg" "msg/STMControl.msg" "msg/STMState.msg")
 
 # Decalre the list of services
-set(srv_files "srv/AddTwoInts.srv")
+set(srv_files "srv/AddTwoInts.srv" "srv/STMSetControlType.srv")
 
 # Generate the messages:​
 
